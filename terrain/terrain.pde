@@ -1,16 +1,16 @@
 int cols, rows;
-int scl = 15;
+int scl = 20;
 int w = width * 20;
-int h = 1800;
+int h = height * 20;
 int dist = 75;
 float flying = 0;
 float tetha;
 int counter = 0;
-int totalFrames = 500;
+int totalFrames = 600;
 float[][] terrain;
 
 void setup(){
-  size(600, 600, P3D);
+  size(640, 640, P3D);
   cols = w / scl;
   rows = h / scl;
   terrain = new float [cols][rows];
@@ -48,7 +48,7 @@ void draw(){
     }
     endShape();
   }
-  saveFrame("/Users/cmeunier/Desktop/output/gif-square-"+nf(counter,4)+".png");
+  //saveFrame("/Users/cmeunier/goinfre/output/gif-square-"+nf(counter,4)+".png");
   counter++;
   if (counter == totalFrames)
     exit();
