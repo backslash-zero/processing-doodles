@@ -32,7 +32,7 @@ void draw(){
   
   background(255);
   stroke(0);
-  noFill();
+  fill(255);
   
   translate(width/2, height/2);
   rotateX(PI/2.5 * sin(2 * sin(tetha + 2)));
@@ -49,7 +49,7 @@ void draw(){
     endShape();
   }
   //saveFrame("/Users/cmeunier/goinfre/output/gif-square-"+nf(counter,4)+".png");
-  counter++;
-  if (counter == totalFrames)
-    exit();
+  //counter++;
+  //if (counter == totalFrames)
+    //exit();
 }
