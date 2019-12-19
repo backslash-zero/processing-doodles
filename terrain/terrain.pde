@@ -9,8 +9,11 @@ int counter = 0;
 int totalFrames = 600;
 float[][] terrain;
 
+public void settings() {
+  size(640, 640, "processing.opengl.PGraphics3D");
+}
+
 void setup(){
-  size(640, 640, P3D);
   cols = w / scl;
   rows = h / scl;
   terrain = new float [cols][rows];
