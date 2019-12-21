@@ -1,13 +1,14 @@
 float xoff, yoff;
 int dotscale = 15;
 int object_size = 24;
+float rotation;
 
 void setup(){
-  size(720, 720, P2D);
+  size(720, 720, P3D);
 }
 void draw(){
   background(255);
-
+  rotateX(rotation);
   //translate(width/1.5, height/1.5);
   for (int i = 0; i < object_size; i++){
     float xpos = drawdot(width, xoff, i * 1000);
@@ -29,6 +30,7 @@ void draw(){
   //counter++;
   //if (counter == totalFrames)
     //exit();
+  
 }
 
 float drawdot(int screensize, float xoff, int delta){
@@ -40,18 +42,8 @@ float drawdot(int screensize, float xoff, int delta){
 
 float rendercolor(float xpos, float ypos, float xpos2, float ypos2){
   float value;
-  float xvalue;
-  float yvalue;
-  
-  xvalue = xpos - xpos2;
-  yvalue = ypos - ypos2;
-  if (xvalue < 0){
-    xvalue = -xvalue;
-  }
-  if (yvalue < 0){
-    yvalue = -yvalue;
-  }
-  value = xvalue + yvalue;
-  value = map(value, width / 5, width / 2, 100, 0);
+
+  value = sqrt(sq(xpos2-xpos) + sq(ypos2-ypos));
+  value = map(value, width / 5, width / 2, 0, 100);
   return(value);
 }
